@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Object Notation</title>
+</head>
+<body>
+	<h1>JavaScript Objects</h1>
+
+	<button onclick="showName()"> Nombre </button>
+	<button onclick="showLn()"> Apellido</button>
+	<button onclick="showAge()"> Edad </button>
+	<button onclick="showMat()"> Matricula </button>
+	<br>
+
+	El nombre es:<span id="res_nom"> </span> <br>
+	El apellido es:<span id="res_ln"> </span> <br>
+	La edad es:<span id="res_age"> </span> <br>
+    La matricula es:<span id="res_mat"> </span> <br>
+
+</body>
+<script type="text/javascript">
+    myObj = {"firstName":"Monica", "lastName":"Aguirre", "age": "19", "matricula":"8682"};
+    x = myObj.firstName;
+    y= myObj.lastName;
+    z = myObj.age;
+    a= myObj.matricula;
+
+    function showName(){
+    	document.getElementById('res_nom').innerHTML = x;
+    }
+
+    function showLn(){
+    	document.getElementById('res_ln').innerHTML = y;
+    }
+
+    function showAge(){
+    	document.getElementById('res_age').innerHTML = z;
+    }
+
+    function showMat(){
+    	document.getElementById('res_mat').innerHTML = a;
+    }
+
+
+</script>
+</html>

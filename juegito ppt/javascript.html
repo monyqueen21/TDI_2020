@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title> Piedra, Papel o Tijera
+	</title>
+</head>
+<body>
+<div>
+	<h1>Bienvenido al juego de Piedra, Papel o Tijera</h1>
+	<img src="ppt.jpg">
+</div>
+<div>
+	<h2>Choose your fighter</h2>
+	<button onclick="escogerPiedra()">Piedra</button>
+	<button onclick="escogerPapel()">Papel</button>
+	<button onclick="escogerTijeras()">Tijeras</button>
+</div>
+<button onclick="launchGame()">Start</button>
+<div>
+	Tu: <img id="image1" src="ready.png" height="120" width="true"> vs.
+	CPU: <img id="image2" src="ready.png" height="120" width="true">
+</div>
+<span id="result"> Let the game begin </span>
+</body>
+<script type="text/javascript">
+	var u;
+	var cpu;
+	function escogerPiedra(){
+		u = 1;
+	}
+
+	function escogerPapel(){
+		u = 2;
+	}
+
+	function escogerTijeras(){
+		u = 3;
+	}
+
+	function launchGame(){
+		cpu = Math.floor(Math.random() * 4);
+		if (u == 1) {
+			document.getElementById('image1').src = "piedra.jpg"
+		} else if( u == 2 ){
+			document.getElementById("image1").src = "papel.jpg"
+		} else if (u == 3){
+			document.getElementById("image1").src = "tijera.jpg"
+		}
+
+		if (cpu == 1) {
+			document.getElementById("image2").src = "piedra.jpg"
+		} else if( cpu == 2 ){
+			document.getElementById("image2").src = "papel.jpg"
+		} else if (cpu == 3){
+			document.getElementById("image2").src = "tijera.jpg"
+		} else {
+			alert("Algo va mal!")
+		}
+
+
+		if ( u == cpu ){
+			document.getElementById("result").innerHTML = "Its a tie";
+			alert("You are tied up");
+		} else if ( u == 1 && cpu == 2) {
+			document.getElementById("result").innerHTML = "CPU has won";
+			alert("You lost");
+		} else if ( u == 2 && cpu == 3) {
+			document.getElementById("result").innerHTML = "CPU has won";
+			alert("You lost");
+		} else if ( u == 3 && cpu == 1) {
+			document.getElementById("result").innerHTML = "CPU has won";
+			alert("You lost");
+		} else if (u == 1 && cpu == 3) {
+			document.getElementById("result").innerHTML = "You have won";
+			alert("You won");
+		} else if (u == 2 && cpu == 1) {
+			document.getElementById("result").innerHTML = "CPU has won";
+			alert("You lost");
+		} else if (u == 3 && cpu == 2) {
+			document.getElementById("result").innerHTML = "CPU has won";
+			alert("You lost");
+		} else {
+
+		}
+  	}
+
+</script>
+</html>
